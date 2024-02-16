@@ -1,17 +1,17 @@
 <template>
   <nav class="min-w-[200px]">
     <div class="h-[80px] px-3 flex items-center gap-3">
-        <Link :href="route('dashboard')">
+        <Link :href="route('myFiles')">
             <ApplicationLogo
                 class="block w-auto text-gray-800 fill-current h-9"
             />
         </Link>
-        StoraPRo
+        <Link :href="route('myFiles')">StoraPRo</Link>
     </div>
     <div class="px-3">
         <CreateNewDropdown/>
         <div class="py-3">
-            <NavLink href="/" :active="true">My files</NavLink>
+            <NavLink :href="route('myFiles')" :active="$page.url === '/my-files'" >My files</NavLink>
             <NavLink href="/" >Shared with Me</NavLink>
             <NavLink href="/">Shared by me</NavLink>
             <NavLink href="/">Trash</NavLink>

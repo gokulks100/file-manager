@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,12 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::controller(FileController::class)->middleware(['auth','verified'])->group(function(){
+    Route::get('/my-files/{folder?}','myFiles')->where('folder','(.*)')->name('myFiles');
+    Route::post('/folder/create','createFolder')->name('folder.create');
+});
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

@@ -5,7 +5,7 @@
             class="block w-full mr-2"
             v-model="form.search"
             autocomplete
-            placeholder="Search"
+            placeholder="Search for files and folders"
         ></TextInput>
     </form>
 </template>
@@ -13,7 +13,6 @@
 <script setup>
 import { useForm } from '@inertiajs/vue3';
 import TextInput from '@/Components/TextInput.vue';
-
 
 
 const form = useForm({

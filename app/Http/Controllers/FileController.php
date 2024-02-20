@@ -12,10 +12,10 @@ use Inertia\Inertia;
 
 class FileController extends Controller
 {
-    public function myFiles(String $folder=null)
+    public function myFiles(String $path=null)
     {
-        if ($folder) {
-            $folder = File::query()->where('created_by', Auth::id())->where('path', $folder)->firstOrFail();
+        if ($path) {
+            $folder = File::query()->where('created_by', Auth::id())->where('path', $path)->firstOrFail();
         } else {
             $folder = $this->getRoot();
         }
